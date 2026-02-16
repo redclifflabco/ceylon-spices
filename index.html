@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceylon Spice - Authentic Sri Lankan Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'spice-red': '#D9381E',
+                        'spice-orange': '#F2A900',
+                        'deep-brown': '#2C1810',
+                        'leaf-green': '#4A7c59',
+                        'cream': '#FDFBF7'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #2C1810;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d9381e' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-cream text-deep-brown antialiased selection:bg-spice-red selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="font-serif text-3xl font-bold text-spice-red">Ceylon<span class="text-deep-brown">Spice</span></a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-deep-brown hover:text-spice-red font-medium transition-colors">Home</a>
+                    <a href="menu.html" class="text-deep-brown hover:text-spice-red font-medium transition-colors">Menu</a>
+                    <a href="about.html" class="text-deep-brown hover:text-spice-red font-medium transition-colors">About Us</a>
+                    <a href="contact.html" class="bg-spice-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">Reserve a Table</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button outline-none p-2 rounded-md hover:bg-gray-100 text-deep-brown">
+                        <svg class="w-6 h-6" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden mobile-menu md:hidden bg-white border-t">
+            <ul class="">
+                <li><a href="index.html" class="block text-sm px-2 py-4 text-deep-brown hover:bg-spice-red hover:text-white transition-colors">Home</a></li>
+                <li><a href="menu.html" class="block text-sm px-2 py-4 text-deep-brown hover:bg-spice-red hover:text-white transition-colors">Menu</a></li>
+                <li><a href="about.html" class="block text-sm px-2 py-4 text-deep-brown hover:bg-spice-red hover:text-white transition-colors">About Us</a></li>
+                <li><a href="contact.html" class="block text-sm px-2 py-4 text-deep-brown hover:bg-spice-red hover:text-white transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen flex items-center justify-center overflow-hidden hero-pattern">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 z-10"></div>
+        
+        <!-- Hero Image (Using Placeholder if generation fails, otherwise will replace) -->
+        <img src="sri_lankan_restaurant_hero.png" onerror="this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'" alt="Sri Lankan Food" class="absolute inset-0 w-full h-full object-cover">
+
+        <div class="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto items-center flex flex-col pt-16">
+            <span class="block text-spice-orange font-serif text-xl md:text-2xl mb-4 tracking-wider animate-fade-in-up">Welcome to Authentic Taste</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight text-shadow animate-fade-in-up animation-delay-200">
+                Taste of <span class="text-spice-orange">Lanka</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-200 mb-10 font-light animate-fade-in-up animation-delay-400">
+                Experience the spicy, vibrant, and soulful flavors of Sri Lanka. From crispy Hoppers to fiery Kottu, we bring the island's culinary heritage to your plate.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+                <a href="menu.html" class="px-8 py-4 border-2 border-spice-orange bg-spice-orange text-deep-brown font-bold rounded-full hover:bg-transparent hover:text-spice-orange transition-all duration-300 shadow-[0_0_20px_rgba(242,169,0,0.4)]">
+                    View Menu
+                </a>
+                <a href="contact.html" class="px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-deep-brown transition-all duration-300">
+                    Book a Table
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Section -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-spice-red font-semibold tracking-wide uppercase text-sm">Our Specialties</h2>
+                <h3 class="mt-2 text-3xl leading-8 font-serif font-bold tracking-tight text-deep-brown sm:text-4xl">
+                    Island Favorites
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="kottu_roti_classic.png" onerror="this.src='https://images.unsplash.com/photo-1626804475297-411dbcc9c4b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'" alt="Kottu Roti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="text-xl font-bold text-deep-brown font-serif">Chicken Kottu</h4>
+                            <span class="text-spice-red font-bold">$12</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm">Chopped godhamba roti stir-fried with chicken, onions, chili, and authentic spices.</p>
+                        <a href="menu.html" class="text-spice-red font-medium hover:text-spice-orange transition-colors inline-flex items-center">Order Now 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="egg_hoppers_breakfast.png" onerror="this.src='https://media.istockphoto.com/id/1183182881/photo/egg-hoppers-traditional-sri-lankan-breakfast-pancakes.jpg?s=612x612&w=0&k=20&c=62j8U8d9l9Fw-N4G5n7kG5h8b5x8J8d9l9Fw-N4G5n7kG5h8b5x8'" alt="Hoppers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="text-xl font-bold text-deep-brown font-serif">Egg Hoppers</h4>
+                            <span class="text-spice-red font-bold">$8</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm">Bowl-shaped crispy pancakes made from fermented rice flour, served with lunu miris.</p>
+                        <a href="menu.html" class="text-spice-red font-medium hover:text-spice-orange transition-colors inline-flex items-center">Order Now
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Rice and Curry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="text-xl font-bold text-deep-brown font-serif">Rice & Black Pork</h4>
+                            <span class="text-spice-red font-bold">$15</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm">Galu style black pork curry served with red rice and three vegetable sides.</p>
+                        <a href="menu.html" class="text-spice-red font-medium hover:text-spice-orange transition-colors inline-flex items-center">Order Now
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-brown text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="font-serif text-2xl font-bold text-white">Ceylon<span class="text-spice-red">Spice</span></a>
+                    <p class="mt-4 text-gray-400 text-sm">Bringing the authentic flavors of Sri Lanka to your table with passion and tradition.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-spice-orange">Quick Links</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="menu.html" class="hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-spice-orange">Contact</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>123 Galle Road, Colombo 03</li>
+                        <li>+94 11 234 5678</li>
+                        <li>hello@ceylonspice.lk</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-spice-orange">Hours</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Mon-Fri: 10:00 AM - 10:00 PM</li>
+                        <li>Sat-Sun: 09:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2024 Ceylon Spice. All rights reserved. Designed for you.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-400 { animation-delay: 0.4s; }
+        .animation-delay-600 { animation-delay: 0.6s; }
+    </style>
+</body>
+</html>
